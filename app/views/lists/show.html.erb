@@ -1,9 +1,14 @@
 <div class="container">
-  <h1><%= @list.name %></h1>
+  <span>
+    <h1 class="genre"><%= @list.name %></h1>
+  </span>
+  <%# <div style="image: image_url("totoro.png")"></div> %>
   <% @list.bookmarks.each do |bookmark| %>
     <h2><%= bookmark.movie.title %></h2>
     <li><%= bookmark.comment %></li>
-    <%= link_to "Delete", bookmark_path(bookmark),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    <div class="button">
+      <%= link_to "Delete", bookmark_path(bookmark),  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}  %>
+    </div>
   <% end%>
   <% if @list.photo.attached?  %>
     <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>

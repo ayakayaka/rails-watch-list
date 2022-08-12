@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>);">
-  <div class="flex-container">
-    <h1>Lists</h1>
+  <div>
+    <span>WELCOME TO MOVIE LIST DAYO</span>
     <%= link_to "Add", new_list_path, class: "btn button"%>
   </div>
 </div>
@@ -8,7 +8,7 @@
   <div class="cards mt-3">
     <% @lists.each do |list| %>
       <div class="card-category"
-       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPQDYau3Hs4-xw1i8jVSUY4BlF4FLmg8lQqg&usqp=CAU' %>)">
+       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : image_url('ponyo.jpg') %>)">
         <%= link_to list.name, list_path(list) %>
       </div>
     <% end %>
