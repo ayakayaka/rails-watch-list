@@ -1,15 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">>
+  <div class="container">
+    <h1>Lists</h1>
+    <div class="button">
+      <%= link_to "Add", new_list_path %>
+    </div>
+  </div>
+</div>
 <div class="container">
-
-<h1>Lists</h1>
-
-<% @lists.each do |list| %>
-
-<%= link_to list.name, list_path(list) %>
-
-<% end %>
-
-<%= link_to "Add", new_list_path %>
-
-
-
+  <div class="cards mt-3">
+    <% @lists.each do |list| %>
+      <div class="card-category"
+       style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to list.name, list_path(list) %>
+      </div>
+    <% end %>
+  </div>
 </div>
