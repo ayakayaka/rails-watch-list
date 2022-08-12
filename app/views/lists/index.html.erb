@@ -1,9 +1,7 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">>
-  <div class="container">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path 'banner.jpg' %>);">
+  <div class="flex-container">
     <h1>Lists</h1>
-    <div class="button">
-      <%= link_to "Add", new_list_path %>
-    </div>
+    <%= link_to "Add", new_list_path, class: "btn button"%>
   </div>
 </div>
 <div class="container">
